@@ -15,7 +15,7 @@ const askManager = () => {
             console.log(managerAnswers);
 
             // AND THEN ask the users what they want to do next with 'inquirer.prompt()' with 'questions.nextMemberQuestions' - need functions
-            return whatsNext();
+            return askWhatsNext();
 
 
             // THEN use their answer to decide what top do next
@@ -28,17 +28,28 @@ const askManager = () => {
         })
 }
 
-const whatsNext = () => {
+const askWhatsNext = () => {
 
     inquirer
     .prompt(questions.whatsNextQuestions)
 
     .then((whatNextAnswer) => {
         console.log('You selected: ' + whatNextAnswer.nextChoice);
+        if (whatNextAnswer.nextChoice === 'Engineer') return askEngineer();
     })
+}
 
+const askEngineer = () => {
+    inquirer
+    .prompt(questions.engineerQuestions)
 
-
+    .then((engineerAnswer) => {
+        // Create new engineer object
+        console.log('Engineer');
+        console.log(engineerAnswer);
+        // Ask User what to do
+        return askWhatsNext();
+    })
 }
 
 // -------------------------------- Initialize -------------------------------- //

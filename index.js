@@ -18,13 +18,7 @@ const askManager = () => {
             console.log('---------------------------------------');
 
             // AND THEN ask the users what they want to do next with 'inquirer.prompt()' with 'questions.nextMemberQuestions' - need functions
-            return askWhatsNext();
-        })
-
-        .then(() => {
-
-            // Use employee objects to create HTML and write it to a file
-
+            askWhatsNext();
         })
 }
 
@@ -34,9 +28,9 @@ const askWhatsNext = () => {
     .prompt(questions.whatsNextQuestions)
 
     .then((whatNextAnswers) => {
-        if (whatNextAnswers.nextChoice === 'Engineer') return askEngineer()
-        else if (whatNextAnswers.nextChoice === 'Intern') return askIntern()
-        else return render.renderPage();
+        if (whatNextAnswers.nextChoice === 'Engineer') askEngineer()
+        else if (whatNextAnswers.nextChoice === 'Intern') askIntern()
+        else render.renderPage();
     })
 }
 
@@ -50,7 +44,7 @@ const askEngineer = () => {
         console.log(engineerAnswers);
         console.log('----------------------------------------');
         // Ask User what to do
-        return askWhatsNext();
+        askWhatsNext();
     })
 }
 
@@ -64,7 +58,7 @@ const askIntern = () => {
         console.log(internAnswers);
         console.log('--------------------------------------');
         // Ask User what to do
-        return askWhatsNext();
+        askWhatsNext();
     })
 }
 

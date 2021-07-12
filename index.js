@@ -30,7 +30,14 @@ const askManager = () => {
 
 const whatsNext = () => {
 
-    console.log('Whats next');
+    inquirer
+    .prompt(questions.whatsNextQuestions)
+
+    .then((whatNextAnswer) => {
+        console.log('You selected: ' + whatNextAnswer.nextChoice);
+    })
+
+
 
 }
 

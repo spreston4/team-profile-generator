@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const questions = require('./lib/questions');
+const render = require('./lib/render');
 
 const askManager = () => {
 
@@ -35,7 +36,7 @@ const askWhatsNext = () => {
     .then((whatNextAnswers) => {
         if (whatNextAnswers.nextChoice === 'Engineer') return askEngineer()
         else if (whatNextAnswers.nextChoice === 'Intern') return askIntern()
-        else return renderPage();
+        else return render.renderPage();
     })
 }
 
@@ -65,12 +66,6 @@ const askIntern = () => {
         // Ask User what to do
         return askWhatsNext();
     })
-}
-
-const renderPage = () => {
-    console.log('--------------------------------------')
-    console.log('Your team is built!');
-    console.log('--------------------------------------')
 }
 
 // -------------------------------- Initialize -------------------------------- //

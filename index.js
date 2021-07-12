@@ -12,7 +12,9 @@ const askManager = () => {
         .then((managerAnswers) => {
 
             // THEN we need to create a new manager object with the data
+            console.log('--------------- Manager ---------------');
             console.log(managerAnswers);
+            console.log('---------------------------------------');
 
             // AND THEN ask the users what they want to do next with 'inquirer.prompt()' with 'questions.nextMemberQuestions' - need functions
             return askWhatsNext();
@@ -33,9 +35,10 @@ const askWhatsNext = () => {
     inquirer
     .prompt(questions.whatsNextQuestions)
 
-    .then((whatNextAnswer) => {
-        console.log('You selected: ' + whatNextAnswer.nextChoice);
-        if (whatNextAnswer.nextChoice === 'Engineer') return askEngineer();
+    .then((whatNextAnswers) => {
+        console.log('You selected: ' + whatNextAnswers.nextChoice);
+        if (whatNextAnswers.nextChoice === 'Engineer') return askEngineer();
+        else if (whatNextAnswers.nextChoice === 'Intern') return askIntern();
     })
 }
 
@@ -43,10 +46,25 @@ const askEngineer = () => {
     inquirer
     .prompt(questions.engineerQuestions)
 
-    .then((engineerAnswer) => {
+    .then((engineerAnswers) => {
         // Create new engineer object
-        console.log('Engineer');
-        console.log(engineerAnswer);
+        console.log('--------------- Engineer ---------------');
+        console.log(engineerAnswers);
+        console.log('----------------------------------------');
+        // Ask User what to do
+        return askWhatsNext();
+    })
+}
+
+const askIntern = () => {
+    inquirer
+    .prompt(questions.internQuestions)
+
+    .then((internAnswers) => {
+        // Create new intern object
+        console.log('--------------- Intern ---------------');
+        console.log(internAnswers);
+        console.log('--------------------------------------');
         // Ask User what to do
         return askWhatsNext();
     })

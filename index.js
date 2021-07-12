@@ -18,9 +18,6 @@ const askManager = () => {
 
             // AND THEN ask the users what they want to do next with 'inquirer.prompt()' with 'questions.nextMemberQuestions' - need functions
             return askWhatsNext();
-
-
-            // THEN use their answer to decide what top do next
         })
 
         .then(() => {
@@ -36,9 +33,9 @@ const askWhatsNext = () => {
     .prompt(questions.whatsNextQuestions)
 
     .then((whatNextAnswers) => {
-        console.log('You selected: ' + whatNextAnswers.nextChoice);
-        if (whatNextAnswers.nextChoice === 'Engineer') return askEngineer();
-        else if (whatNextAnswers.nextChoice === 'Intern') return askIntern();
+        if (whatNextAnswers.nextChoice === 'Engineer') return askEngineer()
+        else if (whatNextAnswers.nextChoice === 'Intern') return askIntern()
+        else return renderPage();
     })
 }
 
@@ -68,6 +65,12 @@ const askIntern = () => {
         // Ask User what to do
         return askWhatsNext();
     })
+}
+
+const renderPage = () => {
+    console.log('--------------------------------------')
+    console.log('Your team is built!');
+    console.log('--------------------------------------')
 }
 
 // -------------------------------- Initialize -------------------------------- //

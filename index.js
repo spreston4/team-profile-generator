@@ -25,41 +25,41 @@ const askManager = () => {
 const askWhatsNext = () => {
 
     inquirer
-    .prompt(questions.whatsNextQuestions)
+        .prompt(questions.whatsNextQuestions)
 
-    .then((whatNextAnswers) => {
-        if (whatNextAnswers.nextChoice === 'Engineer') askEngineer()
-        else if (whatNextAnswers.nextChoice === 'Intern') askIntern()
-        else render.renderPage();
-    })
+        .then((whatNextAnswers) => {
+            if (whatNextAnswers.nextChoice === 'Engineer') askEngineer()
+            else if (whatNextAnswers.nextChoice === 'Intern') askIntern()
+            else render.renderPage();
+        })
 }
 
 const askEngineer = () => {
     inquirer
-    .prompt(questions.engineerQuestions)
+        .prompt(questions.engineerQuestions)
 
-    .then((engineerAnswers) => {
-        // Create new engineer object
-        console.log('--------------- Engineer ---------------');
-        console.log(engineerAnswers);
-        console.log('----------------------------------------');
-        // Ask User what to do
-        askWhatsNext();
-    })
+        .then((engineerAnswers) => {
+            // Create new engineer object
+            console.log('--------------- Engineer ---------------');
+            console.log(engineerAnswers);
+            console.log('----------------------------------------');
+            // Ask User what to do
+            askWhatsNext();
+        })
 }
 
 const askIntern = () => {
     inquirer
-    .prompt(questions.internQuestions)
+        .prompt(questions.internQuestions)
 
-    .then((internAnswers) => {
-        // Create new intern object
-        console.log('--------------- Intern ---------------');
-        console.log(internAnswers);
-        console.log('--------------------------------------');
-        // Ask User what to do
-        askWhatsNext();
-    })
+        .then((internAnswers) => {
+            // Create new intern object
+            console.log('--------------- Intern ---------------');
+            console.log(internAnswers);
+            console.log('--------------------------------------');
+            // Ask User what to do
+            askWhatsNext();
+        })
 }
 
 // -------------------------------- Initialize -------------------------------- //

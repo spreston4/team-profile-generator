@@ -10,31 +10,16 @@ const Intern = require('./lib/intern');
 
 const askManager = () => {
 
-    // 'inquirer.prompt()' the user for manager information using 'questions.managerQuestions'
     inquirer
         .prompt(questions.managerQuestions)
 
-        .then((managerAnswers) => {
+        .then((mAns) => {
 
-            // THEN we need to create a new manager object with the data
-            console.log('--------------- Manager ---------------');
-            console.log(managerAnswers);
-            console.log('---------------------------------------');
+            let newManager = new Manager(mAns.name, mAns.id, mAns.email, mAns.officeNumber);
 
-            // AND THEN ask the users what they want to do next with 'inquirer.prompt()' with 'questions.nextMemberQuestions' - need functions
+            render.employeeArr.push(newManager);
+
             askWhatsNext();
-        })
-}
-
-const askWhatsNext = () => {
-
-    inquirer
-        .prompt(questions.whatsNextQuestions)
-
-        .then((whatNextAnswers) => {
-            if (whatNextAnswers.nextChoice === 'Engineer') askEngineer()
-            else if (whatNextAnswers.nextChoice === 'Intern') askIntern()
-            else render.renderPage();
         })
 }
 
@@ -63,6 +48,19 @@ const askIntern = () => {
             console.log('--------------------------------------');
             // Ask User what to do
             askWhatsNext();
+        })
+}
+
+const askWhatsNext = () => {
+
+    inquirer
+        .prompt(questions.whatsNextQuestions)
+
+        .then((whatNextAnswers) => {
+            console.log('----------------------------------------')
+            if (whatNextAnswers.nextChoice === 'Engineer') askEngineer()
+            else if (whatNextAnswers.nextChoice === 'Intern') askIntern()
+            else render.renderPage();
         })
 }
 

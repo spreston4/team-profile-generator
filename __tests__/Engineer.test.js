@@ -1,10 +1,10 @@
 const Engineer = require('../lib/engineer');
 
-describe('Manager', () => {
+describe('Engineer', () => {
 
-    describe('Engineer', () => {
+    describe('Initialization', () => {
 
-        it('should create an Engineer object containing a name, id number, e-mail, and GitHub name', () => {
+        it('should create an engineer object containing a name, id number, e-mail, and GitHub name', () => {
             
             let sam = new Engineer('Sam', 1, 'sam@email.com', 'spreston4');
 

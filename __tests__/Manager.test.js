@@ -4,7 +4,7 @@ describe('Manager', () => {
 
     describe('Initialization', () => {
 
-        it('should create a Manager object containing a name, id number, e-mail, and office number', () => {
+        it('should create a manager object containing a name, id number, e-mail, and office number', () => {
             
             let sam = new Manager('Sam', 1, 'sam@email.com', 14);
 

@@ -8,6 +8,19 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 
+const init = () => {
+
+    inquirer
+        .prompt(questions.titleQuestions)
+
+        .then((tAns) => {
+
+            render.teamName.push(tAns);
+
+            askManager();
+        })
+}
+
 const askManager = () => {
 
     inquirer
@@ -27,12 +40,12 @@ const askEngineer = () => {
     inquirer
         .prompt(questions.engineerQuestions)
 
-        .then((engineerAnswers) => {
-            // Create new engineer object
-            console.log('--------------- Engineer ---------------');
-            console.log(engineerAnswers);
-            console.log('----------------------------------------');
-            // Ask User what to do
+        .then((eAns) => {
+
+            let newEngineer = new Engineer(eAns.name, eAns.id, eAns.email, eAns.github);
+
+            render.employeeArr.push(newEngineer);
+           
             askWhatsNext();
         })
 }
@@ -41,23 +54,25 @@ const askIntern = () => {
     inquirer
         .prompt(questions.internQuestions)
 
-        .then((internAnswers) => {
-            // Create new intern object
-            console.log('--------------- Intern ---------------');
-            console.log(internAnswers);
-            console.log('--------------------------------------');
-            // Ask User what to do
+        .then((iAns) => {
+            
+            let newIntern = new Intern(iAns.name, iAns.id, iAns.email, iAns.school);
+
+            render.employeeArr.push(newIntern);
+
             askWhatsNext();
         })
 }
 
 const askWhatsNext = () => {
 
+    console.log('-------------------------------')
+
     inquirer
         .prompt(questions.whatsNextQuestions)
 
         .then((whatNextAnswers) => {
-            console.log('----------------------------------------')
+        
             if (whatNextAnswers.nextChoice === 'Engineer') askEngineer()
             else if (whatNextAnswers.nextChoice === 'Intern') askIntern()
             else render.renderPage();
@@ -65,4 +80,4 @@ const askWhatsNext = () => {
 }
 
 // -------------------------------- Initialize -------------------------------- //
-askManager();
+init();

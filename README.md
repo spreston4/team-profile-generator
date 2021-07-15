@@ -1,10 +1,21 @@
 # Team Profile Generator
 
+![Commit](https://img.shields.io/github/last-commit/spreston4/team-profile-generator)
+![Size](https://img.shields.io/github/languages/code-size/spreston4/team-profile-generator)
+
 ## Description
 
 ## Technologies Used
 
 ## How To
+
+## Tests
+
+To run unit tests, enter the following command in the console:
+```
+nmp test
+```
+![Tests](./src/read-images/tests.PNG)
 
 ## User Story
 
@@ -38,4 +49,9 @@ THEN I exit the application, and the HTML is generated
 
 ## Contact Me
 
+Questions, comments, or concerns about this project? Contact me at Github or via e-mail.
+
+* GitHub: [spreston4](https://github.com/spreston4)
+
+* E-mail: [sam.preston11@gmail.com](mailto:sam.preston11@gmail.com)
 

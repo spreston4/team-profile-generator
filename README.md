@@ -13,7 +13,7 @@
 
 To run unit tests, enter the following command in the console:
 ```
-nmp test
+npm test
 ```
 ![Tests](./src/read-images/tests.PNG)
 

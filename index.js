@@ -10,8 +10,7 @@ const Intern = require('./lib/intern');
 // Function 'askManager' is called on application load: prompts user for manager data from 'managerQuestions', saves response as a new Manager object in the employee array, calls 'askWhatsNext' to continue building team.
 const askManager = () => {
 
-    inquirer
-        .prompt(questions.managerQuestions)
+    questions.managerQuestions.promptUser()
 
         .then((mAns) => {
 
@@ -22,8 +21,8 @@ const askManager = () => {
 
 // Function 'askEngineer' is called from 'askWhatsNext': prompts user for engineer data from 'engineerQuestions', saves response as a new Engineer object in the employee array, calls 'askWhatsNext' to continue building team.
 const askEngineer = () => {
-    inquirer
-        .prompt(questions.engineerQuestions)
+    
+    questions.engineerQuestions.promptUser()
 
         .then((eAns) => {
 
@@ -34,8 +33,8 @@ const askEngineer = () => {
 
 // Function 'askIntern' is called from 'askWhatsNext': prompts user for intern data from 'internQuestions', saves response as a new Intern object in the employee array, calls 'askWhatsNext' to continue building team.
 const askIntern = () => {
-    inquirer
-        .prompt(questions.internQuestions)
+    
+    questions.internQuestions.promptUser()
 
         .then((iAns) => {
 

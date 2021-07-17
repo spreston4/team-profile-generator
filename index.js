@@ -7,19 +7,6 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 
-const init = () => {
-
-    inquirer
-        .prompt(questions.titleQuestions)
-
-        .then((tAns) => {
-
-            render.teamName.push(tAns);
-
-            askManager();
-        })
-}
-
 const askManager = () => {
 
     inquirer
@@ -79,4 +66,4 @@ const askWhatsNext = () => {
 }
 
 // -------------------------------- Initialize -------------------------------- //
-init();
+askManager();

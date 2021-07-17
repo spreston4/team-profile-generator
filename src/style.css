@@ -5,6 +5,17 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #cccccc;
+}
+
 .card-width {
     width: 325px;
 }
+
+.card-round {
+    border-radius: 5px;
+}
+
+
+/* #ADD8E6 #CAEEC2 */

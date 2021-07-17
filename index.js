@@ -16,7 +16,6 @@ const askManager = () => {
         .then((mAns) => {
 
             render.employeeArr.push(new Manager(mAns.name, mAns.id, mAns.email, mAns.officeNumber))
-
             askWhatsNext();
         })
 }
@@ -29,7 +28,6 @@ const askEngineer = () => {
         .then((eAns) => {
 
             render.employeeArr.push(new Engineer(eAns.name, eAns.id, eAns.email, eAns.github));
-
             askWhatsNext();
         })
 }
@@ -42,7 +40,6 @@ const askIntern = () => {
         .then((iAns) => {
 
             render.employeeArr.push(new Intern(iAns.name, iAns.id, iAns.email, iAns.school));
-
             askWhatsNext();
         })
 }

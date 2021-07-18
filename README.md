@@ -7,6 +7,8 @@
 
 A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
 
+![Output](./src/read-images/output.PNG)
+
 ## Table of Contents
 
 * [How To](#how-to)
@@ -33,8 +35,6 @@ node index
 ![Prompts](./src/read-images/input.PNG)
 
 * Select "I'm done building my team." to generate your HTML and CSS files. Files are generated in the 'dist' folder.
-
-![Output](./src/read-images/output.PNG)
 
 
 ## Testing

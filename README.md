@@ -5,17 +5,59 @@
 
 ## Description
 
-## Technologies Used
+A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
+
+## Table of Contents
+
+* [How To](#how-to)
+* [Testing](#testing)
+* [Technologies Used](#technologies-used)
+* [User Story](#user-story)
+* [Acceptance Criteria](#acceptance-criteria)
+* [Contact Me](#contact-me)
 
 ## How To
 
-## Tests
+* [Video walkthrough of this application's full functionality.](https://drive.google.com/file/d/19SUj--LJkRBeJfRZlNTsgoO1ANI3EG77/view)
+
+* Navigate to the team-profile-generator directory and install dependencies by entering the following command in the console:
+```
+npm install
+```
+* Run the application by entering the following command into the console:
+```
+node index
+```
+* Answer pompts to build your team. You can add one Manager and an unlimited amount Engineers & Interns. Prompts are validated to ensure correct input.
+
+![Prompts](./src/read-images/input.PNG)
+
+* Select "I'm done building my team." to generate your HTML and CSS files. Files are generated in the 'dist' folder.
+
+![Output](./src/read-images/output.PNG)
+
+
+## Testing
 
 To run unit tests, enter the following command in the console:
 ```
-npm test
+npm run test
 ```
+If tests are successful, you will see the following displayed to the console:
+
 ![Tests](./src/read-images/tests.PNG)
+
+## Technologies Used
+
+Built in Visual Studio with:
+* Node.js
+* Javascript /jQuery
+* Font Awesome Icons
+* UI Kit / CSS
+* HTML
+* Inquirer
+* Fs
+* Jest
 
 ## User Story
 

@@ -11,7 +11,6 @@ const Intern = require('./lib/intern');
 const askManager = () => {
 
     questions.managerQuestions.promptUser()
-
         .then((mAns) => {
 
             render.employeeArr.push(new Manager(mAns.name, mAns.id, mAns.email, mAns.officeNumber))
@@ -23,7 +22,6 @@ const askManager = () => {
 const askEngineer = () => {
     
     questions.engineerQuestions.promptUser()
-
         .then((eAns) => {
 
             render.employeeArr.push(new Engineer(eAns.name, eAns.id, eAns.email, eAns.github));
@@ -35,7 +33,6 @@ const askEngineer = () => {
 const askIntern = () => {
     
     questions.internQuestions.promptUser()
-
         .then((iAns) => {
 
             render.employeeArr.push(new Intern(iAns.name, iAns.id, iAns.email, iAns.school));
@@ -47,10 +44,8 @@ const askIntern = () => {
 const askWhatsNext = () => {
 
     console.log('-------------------------------')
-
     inquirer
         .prompt(questions.whatsNextQuestions)
-
         .then((whatNextAnswers) => {
 
             if (whatNextAnswers.nextChoice === 'Engineer') askEngineer()
